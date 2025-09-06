@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://ci0xed1iemh0o"]
+
+[ext_resource type="Script" uid="uid://cesi2kiqhw888" path="res://resources/item_data.gd" id="1_etvc8"]
+[ext_resource type="Texture2D" uid="uid://y8ppu3xrxyq8" path="res://assets/item_4.png" id="2_elxiw"]
+
+[resource]
+script = ExtResource("1_etvc8")
+name = "Blue Square"
+texture = ExtResource("2_elxiw")
+dimentions = Vector2i(2, 1)
+metadata/_custom_type_script = "uid://cesi2kiqhw888"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://jx172ma3ivl1"]
+
+[ext_resource type="Script" uid="uid://cesi2kiqhw888" path="res://resources/item_data.gd" id="1_s2mo3"]
+[ext_resource type="Texture2D" uid="uid://bty5kb4d5hdkt" path="res://assets/item_2.png" id="2_r2441"]
+
+[resource]
+script = ExtResource("1_s2mo3")
+name = "Red Square"
+texture = ExtResource("2_r2441")
+dimentions = Vector2i(1, 1)
+metadata/_custom_type_script = "uid://cesi2kiqhw888"

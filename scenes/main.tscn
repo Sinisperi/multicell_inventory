@@ -1,0 +1,104 @@
+[gd_scene load_steps=16 format=3 uid="uid://bvk3nuip22uea"]
+
+[ext_resource type="Script" uid="uid://cnpsjh82lw21s" path="res://scripts/inventory.gd" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://bwmjgsr2og70y" path="res://scripts/main.gd" id="1_ya4ey"]
+[ext_resource type="Script" uid="uid://bpujntdf2ohum" path="res://scripts/item_grid.gd" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://bcdhrx8qtisqc" path="res://scenes/inventory_item.tscn" id="2_tefeu"]
+[ext_resource type="Texture2D" uid="uid://y8ppu3xrxyq8" path="res://assets/item_4.png" id="3_eb6dy"]
+[ext_resource type="Script" uid="uid://cesi2kiqhw888" path="res://resources/item_data.gd" id="3_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://b1rb0py2jff5y" path="res://scenes/inventory_slot.tscn" id="3_sugp2"]
+[ext_resource type="Resource" uid="uid://dbaxhbycjwvyk" path="res://resources/items/orange_square.tres" id="6_choun"]
+[ext_resource type="Resource" uid="uid://cdporp05y13nw" path="res://resources/items/green_square.tres" id="7_trceg"]
+[ext_resource type="Resource" uid="uid://jx172ma3ivl1" path="res://resources/items/red_square.tres" id="7_ya4ey"]
+[ext_resource type="Resource" uid="uid://ci0xed1iemh0o" path="res://resources/items/blue_square.tres" id="8_a8y0u"]
+[ext_resource type="Resource" uid="uid://bjupgkgkefml0" path="res://resources/items/pink_square.tres" id="8_eb6dy"]
+[ext_resource type="Texture2D" uid="uid://w17le25vvpgn" path="res://assets/item_5.png" id="11_trceg"]
+
+[sub_resource type="Resource" id="Resource_trceg"]
+script = ExtResource("3_o6xl0")
+name = "Blue Square"
+texture = ExtResource("3_eb6dy")
+dimentions = Vector2i(2, 1)
+is_rotated = false
+metadata/_custom_type_script = "uid://cesi2kiqhw888"
+
+[sub_resource type="Resource" id="Resource_a8y0u"]
+script = ExtResource("3_o6xl0")
+name = "Orange Square"
+texture = ExtResource("11_trceg")
+dimentions = Vector2i(2, 2)
+is_rotated = false
+metadata/_custom_type_script = "uid://cesi2kiqhw888"
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ya4ey")
+items = Array[ExtResource("3_o6xl0")]([SubResource("Resource_trceg"), ExtResource("8_a8y0u"), ExtResource("8_a8y0u")])
+
+[node name="Inventory" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o5qli")
+inventory_item_scene = ExtResource("2_tefeu")
+items = Array[ExtResource("3_o6xl0")]([ExtResource("7_trceg"), ExtResource("8_a8y0u"), ExtResource("6_choun"), ExtResource("7_ya4ey"), ExtResource("8_eb6dy"), SubResource("Resource_a8y0u")])
+
+[node name="ItemGrid" type="GridContainer" parent="Inventory"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+script = ExtResource("2_0wfyh")
+dimentions = Vector2i(5, 5)
+inventory_slot_scene = ExtResource("3_sugp2")
+
+[node name="ItemHolder" type="Control" parent="Inventory"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+
+[node name="AddItem" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Add Item"
+
+[node name="Save" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1.0
+offset_top = 95.0
+offset_right = 124.0
+offset_bottom = 126.0
+text = "Save Inventory"
+
+[node name="Load" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 408.0
+offset_top = 104.0
+offset_right = 465.0
+offset_bottom = 135.0
+text = "LoaSD
+"
+
+[node name="Clear" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 407.0
+offset_top = 6.0
+offset_right = 462.0
+offset_bottom = 37.0
+text = "cLEAR
+"

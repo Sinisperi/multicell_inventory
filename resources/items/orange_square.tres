@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dbaxhbycjwvyk"]
+
+[ext_resource type="Script" uid="uid://cesi2kiqhw888" path="res://resources/item_data.gd" id="1_p4re2"]
+[ext_resource type="Texture2D" uid="uid://w17le25vvpgn" path="res://assets/item_5.png" id="2_kd0r3"]
+
+[resource]
+script = ExtResource("1_p4re2")
+name = "Orange Square"
+texture = ExtResource("2_kd0r3")
+dimentions = Vector2i(2, 2)
+metadata/_custom_type_script = "uid://cesi2kiqhw888"

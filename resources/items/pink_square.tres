@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bjupgkgkefml0"]
+
+[ext_resource type="Script" uid="uid://cesi2kiqhw888" path="res://resources/item_data.gd" id="1_k2fql"]
+[ext_resource type="Texture2D" uid="uid://cjo4otcrqea10" path="res://assets/item_3.png" id="2_24lwg"]
+
+[resource]
+script = ExtResource("1_k2fql")
+name = "Pink Square"
+texture = ExtResource("2_24lwg")
+dimentions = Vector2i(1, 1)
+metadata/_custom_type_script = "uid://cesi2kiqhw888"
