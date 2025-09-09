@@ -33,7 +33,6 @@ func attempt_to_add_item_data(item: Node) -> bool:
 		cell_index += 1
 	
 	if cell_index >= cell_data.size():
-		prints("item didn't fit at index", cell_index)
 		return false
 	
 	for y in item.data.dimentions.y:

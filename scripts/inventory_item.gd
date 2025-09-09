@@ -16,17 +16,14 @@ var size: Vector2:
 var anchor_point: Vector2:
 	get():
 		var new_anchor = global_position - size / 2
-		%ColorRect.global_position = new_anchor
 		return new_anchor
 
 var is_rotated: bool = false
 
 
 func _ready() -> void:
-	#size = Vector2.ZERO
 	if data:
 		texture = data.texture
-	print(size)
 		
 			
 			
@@ -40,7 +37,6 @@ func set_init_position(pos: Vector2) -> void:
 		rotation_degrees = 90
 	global_position = pos + size / 2
 	anchor_point = global_position - size / 2
-	%ColorRect.global_position = anchor_point
 		
 	
 	
@@ -49,7 +45,6 @@ func get_picked_up() -> void:
 	is_picked = true
 	z_index = 10
 	anchor_point = global_position - size / 2
-	%ColorRect.global_position = anchor_point
 	animate(AnimationType.PICK_UP)
 	mouse_offset = get_global_mouse_position() - global_position
 	
@@ -65,7 +60,6 @@ func get_placed(pos: Vector2i) -> void:
 	remove_from_group("held_item")
 	z_index = 0
 	anchor_point = global_position - size / 2
-	%ColorRect.global_position = anchor_point
 	animate(AnimationType.PLACE)
 
 func do_rotation() -> void:
@@ -77,7 +71,6 @@ func do_rotation() -> void:
 	else:
 		animate(AnimationType.ROTATE_BACK)
 	anchor_point = global_position - size / 2
-	%ColorRect.global_position = anchor_point
 
 
 func animate(animation: AnimationType) -> void:

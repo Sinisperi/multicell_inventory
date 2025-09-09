@@ -4,10 +4,12 @@ class_name Inventory extends PanelContainer
 @export var items: Array[ItemData] = []
 @onready var item_holder: Control = %ItemHolder
 @onready var item_grid: GridContainer = %ItemGrid
-
+var iter: int = 1000
 func _ready() -> void:
-	for i in items:
-		add_item(i)
+	while iter:
+		for i in items:
+			add_item(i)
+		iter -= 1
 
 
 func add_item(item_data: ItemData) -> void:
@@ -15,8 +17,8 @@ func add_item(item_data: ItemData) -> void:
 	inventory_item.data = item_data.duplicate()
 	item_holder.add_child(inventory_item)
 	var success = item_grid.attempt_to_add_item_data(inventory_item)
-	if !success:
-		inventory_item.queue_free()
+	#if !success:
+		#inventory_item.queue_free()
 		
 func serialize_cell_data() -> Dictionary:
 	var res = {}
